@@ -5,14 +5,65 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="#00ff00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cardView_height"
+        android:background="@color/purple_500"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+    
+    <ImageButton
+        android:id="@+id/aws_learning_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toTopOf="@+id/settings_button"
+        app:layout_constraintEnd_toStartOf="@+id/aws_practice_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+    
+    <ImageButton
+        android:id="@+id/aws_practice_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toTopOf="@+id/settings_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aws_learning_button"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+    
+    <ImageButton
+        android:id="@+id/settings_button"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#00ff00"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toTopOf="@+id/AdMobArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    
+    <TextView
+        android:id="@+id/AdMobArea"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ff0000"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="AdMob"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
