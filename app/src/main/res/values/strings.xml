@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AwsClfLearning</string>
+    <string name="title_activity_practice">PracticeActivity</string>
+    <string name="title_activity_learning">LearningActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 </resources>
