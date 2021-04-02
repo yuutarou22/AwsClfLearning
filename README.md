@@ -8,6 +8,9 @@ AWS CLF試験を受けようと思う。
 
 どうせ学習するならAWSと連携したアプリを作って、ついでに広告つけて小遣い稼ぎしたい。。。
 
+## S3の導入
+- IAMの追加
+- 
 
 ## 参考
 - Toolbarの実装
@@ -21,3 +24,4 @@ AWS CLF試験を受けようと思う。
   - [導入](https://developers.google.com/admob/android/quick-start?hl=ja#import_the_mobile_ads_sdk)
   - [サンプル広告コード](https://developers.google.com/admob/android/test-ads#sample_ad_units)
   - [バナー広告](https://developers.google.com/admob/android/banner?hl=ja#kotlin_1)
+  - [ストア公開し、リンク付けしないと本番広告は表示されない](https://www.yukiiworks.com/archives/267)
