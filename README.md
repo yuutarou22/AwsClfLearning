@@ -16,6 +16,8 @@ AWS CLF試験を受けようと思う。
 - Toolbarの実装
   - [基礎](https://note.com/fiasjawn/n/n403266120226)
   - [importでハマった](https://qiita.com/tkmd35/items/a0af2b985491ddef7bc7)
+  - [Menuをカスタマイズ](https://developer.android.com/training/appbar/actions?hl=ja)
+  - [ActionBarとの違い](https://moewe-net.com/android/toolbar)
 - kotlin-android-extensions
   - clickListenerを実装する際大活躍だったプラグインがAndroidStudio4.1から消えてるっぽい
   - [概要](https://qiita.com/superman9387/items/9df8038c4db92a7136c8)
