@@ -20,6 +20,11 @@ class TopFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_top, container, false)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        activity?.title = getString(R.string.title_fragment_top)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         aws_practice_button.setOnClickListener {

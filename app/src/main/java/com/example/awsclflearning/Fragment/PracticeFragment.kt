@@ -20,6 +20,11 @@ class PracticeFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        activity?.title = getString(R.string.title_fragment_practice)
+    }
+
     /** FragmentがUI描画時に呼び出す */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,15 +36,10 @@ class PracticeFragment : Fragment() {
     /** FragmentのUI描画完了後に呼び出す */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView()
     }
 
     /** FragmentとActivityの紐付けが解除された時呼び出す */
     override fun onDetach() {
         super.onDetach()
-    }
-
-    private fun initView() {
-
     }
 }
