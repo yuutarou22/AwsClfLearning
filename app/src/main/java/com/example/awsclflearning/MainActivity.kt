@@ -1,8 +1,8 @@
 package com.example.awsclflearning
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.awsclflearning.Fragment.TopFragment
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,23 +14,22 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.setTitle(R.string.app_name)
 
+        // AdMobの初期化とロード
         MobileAds.initialize(this){}
         val adRequest = AdRequest.Builder().build()
         ad_area.loadAd(adRequest)
 
-        aws_practice_button.setOnClickListener {
-            var intent = Intent(this, PracticeActivity::class.java)
-            startActivity(intent)
-        }
+        showTopFragment()
+    }
 
-        aws_learning_button.setOnClickListener {
-            var intent = Intent(this, LearningActivity::class.java)
-            startActivity(intent)
-        }
-
-        settings_button.setOnClickListener {
-            var intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
-        }
+    /**
+     * TopFragment表示処理
+     */
+    fun showTopFragment() {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+//        fragmentTransaction.addToBackStack(null)
+        fragmentTransaction.replace(R.id.main_contents, TopFragment())
+        fragmentTransaction.commit()
     }
 }
