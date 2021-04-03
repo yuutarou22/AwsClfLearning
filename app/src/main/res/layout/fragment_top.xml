@@ -7,44 +7,79 @@
     android:background="#ff0000"
     tools:context=".Fragment.TopFragment">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <FrameLayout
+        android:id="@+id/ramdom_daily_question"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/cardView_height"
-        android:layout_margin="5dp"
-        android:elevation="10dp"
-        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageButton
+        <TextView
+            android:id="@+id/ramdom_daily_question_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="0dp"
+            android:background="@color/sub_color"
+            android:foregroundGravity="center_vertical"
+            android:padding="3dp"
+            android:text="@string/ramdom_daily_question_title"
+            android:textColor="@color/white"
+            android:translationZ="3dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ramdom_daily_question_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/cardView_height"
+            android:elevation="10dp"
+            app:cardCornerRadius="@dimen/cardView_corner_radius"
+            app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question_title">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:text="＜問題＞" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="60dp"
+                    android:text="aaaaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaa\n\naaaaaaaaaaaaaaaaaaa\naaaaaaa\naaaa\naaaa\naaaaaaaaaaa" />
+            </ScrollView>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+    <include
         android:id="@+id/aws_learning_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/learning_button"
-        app:layout_constraintBottom_toTopOf="@+id/settings_button"
+        layout="@layout/learning_button"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/aws_practice_button"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question" />
 
-    <ImageButton
+    <include
         android:id="@+id/aws_practice_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/practice_button"
-        app:layout_constraintBottom_toTopOf="@+id/settings_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/aws_learning_button"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <ImageButton
-        android:id="@+id/settings_button"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"
+        layout="@layout/practice_button"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/aws_learning_button"
+        app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

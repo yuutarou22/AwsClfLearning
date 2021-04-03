@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">AwsClfLearning</string>
-    <string name="title_activity_practice">PracticeActivity</string>
-    <string name="title_activity_learning">LearningActivity</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_fragment_top">トップ</string>
+    <string name="title_fragment_practice">練習問題</string>
+    <string name="title_fragment_learning">AWS学習</string>
+    <string name="title_fragment_settings">設定</string>
+    <string name="ramdom_daily_question_title">今日の1問1答</string>
 </resources>
