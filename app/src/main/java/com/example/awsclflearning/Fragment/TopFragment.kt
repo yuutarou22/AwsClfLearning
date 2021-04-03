@@ -3,11 +3,12 @@ package com.example.awsclflearning.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import com.example.awsclflearning.R
 import kotlinx.android.synthetic.main.fragment_top.*
 
-class TopFragment : BaseFragment() {
+class TopFragment : BaseFragment(), OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,16 +28,28 @@ class TopFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        aws_practice_button.setOnClickListener {
-            showFragment(PracticeFragment())
-        }
 
-        aws_learning_button.setOnClickListener {
-            showFragment(LearningFragment())
-        }
+        // ボタンの設定
+        aws_practice_button.setOnClickListener(this)
+        aws_learning_button.setOnClickListener(this)
+        settings_button.setOnClickListener(this)
+    }
 
-        settings_button.setOnClickListener {
-            showFragment(SettingsFragment())
+    override fun onClick(view: View?) {
+        // viewがNullでなければ実行される
+        view?.let {
+            when (view.id) {
+                aws_practice_button.id -> {
+                    showFragment(PracticeFragment())
+                }
+                aws_learning_button.id -> {
+                    showFragment(LearningFragment())
+                }
+                settings_button.id -> {
+                    showFragment(SettingsFragment())
+                }
+                else -> {}
+            }
         }
     }
 
