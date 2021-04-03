@@ -2,6 +2,9 @@ package com.example.awsclflearning.Fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
@@ -18,7 +21,25 @@ class TopFragment : BaseFragment(), OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // FragmentでToolbarのMenuを管理するために実行。onCreateOptionMenuが呼び出される
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_top, container, false)
+    }
+
+    /** ToolBarのオプション項目をセット **/
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.top_menu, menu)
+    }
+
+    /** ToolBarのオプションタップ時の処理 **/
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        R.id.settings -> {
+            showFragment(SettingsFragment())
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -32,7 +53,6 @@ class TopFragment : BaseFragment(), OnClickListener {
         // ボタンの設定
         aws_practice_button.setOnClickListener(this)
         aws_learning_button.setOnClickListener(this)
-        settings_button.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -44,9 +64,6 @@ class TopFragment : BaseFragment(), OnClickListener {
                 }
                 aws_learning_button.id -> {
                     showFragment(LearningFragment())
-                }
-                settings_button.id -> {
-                    showFragment(SettingsFragment())
                 }
                 else -> {}
             }
