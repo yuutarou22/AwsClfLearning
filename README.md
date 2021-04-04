@@ -12,7 +12,7 @@ AWS CLF試験を受けようと思う。
 - IAMの追加
 - 
 
-## 参考
+## 参考（技術面）
 - Toolbarの実装
   - [基礎](https://note.com/fiasjawn/n/n403266120226)
   - [importでハマった](https://qiita.com/tkmd35/items/a0af2b985491ddef7bc7)
@@ -35,3 +35,7 @@ AWS CLF試験を受けようと思う。
 - EpandableListView（折り畳み可能ListView）
   - [実装方法](https://tekulearn.jimdofree.com/%E9%96%8B%E7%99%BA/%E9%A0%85%E7%9B%AE1-10/6-%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E8%A1%A8%E7%A4%BA/)
   - [実装方法２](http://android-note.open-memo.net/sub/list_view__make_expandable_list_view.html)
+
+## 参考（UI/UX）
+- [文字や背景にピュアブラックを使ってはいけない理由](https://uxmilk.jp/73614)
+  - 黒のカラーコードに#000000を使うのはイケてないっていうお話
