@@ -27,3 +27,11 @@ AWS CLF試験を受けようと思う。
   - [サンプル広告コード](https://developers.google.com/admob/android/test-ads#sample_ad_units)
   - [バナー広告](https://developers.google.com/admob/android/banner?hl=ja#kotlin_1)
   - [ストア公開し、リンク付けしないと本番広告は表示されない](https://www.yukiiworks.com/archives/267)
+- ViewPager
+  - [ViewPagerの実装](https://developer.android.com/training/animation/screen-slide?hl=ja)
+  - [画面遷移後に表示されなくなってハマった](https://qiita.com/tomoteru/items/1e2328b05fb8257f4192)
+    - FragmentManagerではなく、ChildFragmentMangerを使わないといけなかった。
+  - [PagerSlidingTabStripっていうのもある](https://qiita.com/kkkaaakkku/items/3e5297455795861f17f1)
+- EpandableListView（折り畳み可能ListView）
+  - [実装方法](https://tekulearn.jimdofree.com/%E9%96%8B%E7%99%BA/%E9%A0%85%E7%9B%AE1-10/6-%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E8%A1%A8%E7%A4%BA/)
+  - [実装方法２](http://android-note.open-memo.net/sub/list_view__make_expandable_list_view.html)
