@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff0000"
     tools:context=".Fragment.TopFragment">
 
     <FrameLayout
@@ -27,7 +26,7 @@
             android:padding="3dp"
             android:text="@string/ramdom_daily_question_title"
             android:textColor="@color/white"
-            android:translationZ="3dp" />
+            android:translationZ="11dp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/ramdom_daily_question_cardview"
@@ -43,17 +42,12 @@
                 android:layout_marginTop="36dp"
                 android:text="＜問題＞" />
 
-            <ScrollView
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="60dp"
-                    android:text="aaaaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaa\n\naaaaaaaaaaaaaaaaaaa\naaaaaaa\naaaa\naaaa\naaaaaaaaaaa" />
-            </ScrollView>
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="60dp"
+                android:text="aaaaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaa\n\naaaaaaaaaaaaaaaaaaa\naaaaaaa\naaaa\naaaa\naaaaaaaaaaa" />
 
         </androidx.cardview.widget.CardView>
     </FrameLayout>
