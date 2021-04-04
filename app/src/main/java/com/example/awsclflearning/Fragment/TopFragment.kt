@@ -61,6 +61,17 @@ class TopFragment : BaseFragment(), OnClickListener {
         val pagerAdapter = childFragmentManager?.let { RamdomDaylyQuestionAdapter(it, fragmentList) }
         mPager.setPageTransformer(true, DepthPageTransformer())
         mPager.adapter = pagerAdapter
+
+        setupIndicator()
+    }
+
+    fun setupIndicator() {
+        random_daily_question_pager_indicator.setupWithViewPager(random_daily_question_pager, true)
+        random_daily_question_pager_indicator.clearOnTabSelectedListeners()
+
+        for (view in random_daily_question_pager_indicator.touchables) {
+            view.isEnabled = false
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -33,8 +33,17 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/cardView_height"/>
 
-
     </FrameLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/random_daily_question_pager_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question"
+        app:tabBackground="@drawable/indicator_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp" />
 
     <include
         android:id="@+id/aws_learning_button"
@@ -46,7 +55,7 @@
         app:layout_constraintEnd_toStartOf="@+id/aws_practice_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question" />
+        app:layout_constraintTop_toBottomOf="@+id/random_daily_question_pager_indicator" />
 
     <include
         android:id="@+id/aws_practice_button"
@@ -58,6 +67,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/aws_learning_button"
-        app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question" />
+        app:layout_constraintTop_toBottomOf="@+id/random_daily_question_pager_indicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
