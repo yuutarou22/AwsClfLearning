@@ -28,28 +28,12 @@
             android:textColor="@color/white"
             android:translationZ="11dp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ramdom_daily_question_cardview"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/random_daily_question_pager"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cardView_height"
-            android:elevation="10dp"
-            app:cardCornerRadius="@dimen/cardView_corner_radius"
-            app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question_title">
+            android:layout_height="@dimen/cardView_height"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:text="＜問題＞" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginTop="60dp"
-                android:text="aaaaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaa\n\naaaaaaaaaaaaaaaaaaa\naaaaaaa\naaaa\naaaa\naaaaaaaaaaa" />
-
-        </androidx.cardview.widget.CardView>
     </FrameLayout>
 
     <include

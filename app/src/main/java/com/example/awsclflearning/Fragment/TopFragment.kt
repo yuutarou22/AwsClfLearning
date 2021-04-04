@@ -1,6 +1,8 @@
 package com.example.awsclflearning.Fragment
 
+import androidx.fragment.app.Fragment
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -8,10 +10,18 @@ import android.view.MenuItem
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import androidx.viewpager.widget.ViewPager
+import com.example.awsclflearning.Adapter.RamdomDaylyQuestionAdapter
+import com.example.awsclflearning.DepthPageTransformer
+import com.example.awsclflearning.Fragment.RamdomDaylyQuestionFragments.RamdomDaylyQuestionFragment01
+import com.example.awsclflearning.Fragment.RamdomDaylyQuestionFragments.RamdomDaylyQuestionFragment02
+import com.example.awsclflearning.Fragment.RamdomDaylyQuestionFragments.RamdomDaylyQuestionFragment03
 import com.example.awsclflearning.R
 import kotlinx.android.synthetic.main.fragment_top.*
 
 class TopFragment : BaseFragment(), OnClickListener {
+
+    private lateinit var mPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +55,12 @@ class TopFragment : BaseFragment(), OnClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         activity?.title = getString(R.string.title_fragment_top)
+
+        val fragmentList = createFragmentList()
+        mPager = random_daily_question_pager
+        val pagerAdapter = childFragmentManager?.let { RamdomDaylyQuestionAdapter(it, fragmentList) }
+        mPager.setPageTransformer(true, DepthPageTransformer())
+        mPager.adapter = pagerAdapter
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -70,4 +86,11 @@ class TopFragment : BaseFragment(), OnClickListener {
         }
     }
 
+    private fun createFragmentList(): ArrayList<Fragment> {
+        return arrayListOf<Fragment>(
+            RamdomDaylyQuestionFragment01(),
+            RamdomDaylyQuestionFragment02(),
+            RamdomDaylyQuestionFragment03()
+        )
+    }
 }
