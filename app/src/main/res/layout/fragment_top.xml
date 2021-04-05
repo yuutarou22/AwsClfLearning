@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff0000"
     tools:context=".Fragment.TopFragment">
 
     <FrameLayout
@@ -25,38 +24,27 @@
             android:background="@color/sub_color"
             android:foregroundGravity="center_vertical"
             android:padding="3dp"
+            android:textSize="15sp"
             android:text="@string/ramdom_daily_question_title"
             android:textColor="@color/white"
-            android:translationZ="3dp" />
+            android:translationZ="11dp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ramdom_daily_question_cardview"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/random_daily_question_pager"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cardView_height"
-            android:elevation="10dp"
-            app:cardCornerRadius="@dimen/cardView_corner_radius"
-            app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question_title">
+            android:layout_height="@dimen/cardView_height"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:text="＜問題＞" />
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="60dp"
-                    android:text="aaaaaaaaaaaaaaaaaaaaaaa\naaaaaaaaaa\n\naaaaaaaaaaaaaaaaaaa\naaaaaaa\naaaa\naaaa\naaaaaaaaaaa" />
-            </ScrollView>
-
-        </androidx.cardview.widget.CardView>
     </FrameLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/random_daily_question_pager_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="bottom"
+        app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question"
+        app:tabBackground="@drawable/indicator_selector"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="0dp" />
 
     <include
         android:id="@+id/aws_learning_button"
@@ -68,7 +56,7 @@
         app:layout_constraintEnd_toStartOf="@+id/aws_practice_button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question" />
+        app:layout_constraintTop_toBottomOf="@+id/random_daily_question_pager_indicator" />
 
     <include
         android:id="@+id/aws_practice_button"
@@ -80,6 +68,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/aws_learning_button"
-        app:layout_constraintTop_toBottomOf="@+id/ramdom_daily_question" />
+        app:layout_constraintTop_toBottomOf="@+id/random_daily_question_pager_indicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

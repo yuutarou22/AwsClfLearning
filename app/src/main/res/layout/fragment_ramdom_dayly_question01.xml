@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sub_trans_color2"
+    android:orientation="vertical"
+    tools:context=".Fragment.RamdomDaylyQuestionFragments.RamdomDaylyQuestionFragment01">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textSize="16sp"
+        android:textColor="@color/dark_gray"
+        android:text="＜問題＞" />
+
+    <TextView
+        android:id="@+id/question_content"
+        android:textSize="13sp"
+        android:text="EC2にEBSをアタッチして、アプリケーションで作成したファイルをEBSに格納している。EBSの暗号化について正しいものを2つ選べ。"
+        android:layout_width="match_parent"
+        android:textColor="@color/dark_gray"
+        android:layout_marginHorizontal="10dp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
