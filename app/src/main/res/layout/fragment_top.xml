@@ -24,6 +24,7 @@
             android:background="@color/sub_color"
             android:foregroundGravity="center_vertical"
             android:padding="3dp"
+            android:textSize="15sp"
             android:text="@string/ramdom_daily_question_title"
             android:textColor="@color/white"
             android:translationZ="11dp" />
