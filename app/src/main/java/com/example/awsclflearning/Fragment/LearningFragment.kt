@@ -3,6 +3,8 @@ package com.example.awsclflearning.Fragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -37,18 +39,8 @@ class LearningFragment : Fragment() {
         item_group2.add("Group2ーD")
 
         val item_group3: MutableList<String> = ArrayList()
-        item_group3.add("Group3ーA")
-        item_group3.add("Group3ーB")
-        item_group3.add("Group3ーC")
-        item_group3.add("Group3ーD")
-        item_group3.add("Group3ーA2")
-        item_group3.add("Group3ーB2")
-        item_group3.add("Group3ーC2")
-        item_group3.add("Group3ーD2")
-        item_group3.add("Group3ーA3")
-        item_group3.add("Group3ーB3")
-        item_group3.add("Group3ーC3")
-        item_group3.add("Group3ーD3")
+        item_group3.add("図解即戦力　Amazon Web Servicesのしくみと技術がこれ1冊でしっかりわかる教科書")
+        item_group3.add("一夜漬け AWS認定クラウドプラクティショナー 直前対策テキスト")
 
         val items: MutableList<List<String>> = ArrayList()
         items.add(item_group1)
@@ -71,7 +63,13 @@ class LearningFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_learning, container, false)
+    }
+
+    /** ToolBarのオプション項目をセット **/
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.learning_menu, menu)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -11,16 +11,60 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:textSize="16sp"
+        android:text="＜選択肢＞"
         android:textColor="@color/dark_gray"
-        android:text="＜選択肢＞" />
+        android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/question_content"
-        android:textSize="13sp"
-        android:layout_marginHorizontal="10dp"
-        android:text="①暗号化されたEBSに対してスナップショットを取得すると、該当のスナップショットも暗号化される\n②暗号化されたEBSに対してスナップショットを取得しても、該当のスナップショットは暗号化されない\n③暗号化されたEBSスナップショットを復元したEBSボリュームは暗号化される\n④暗号化されたEBSスナップショットを復元したEBSボリュームは暗号化されない"
-        android:textColor="@color/dark_gray"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/question_choice1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/question_choice_margin_top"
+                android:text="①暗号化されたEBSに対してスナップショットを取得すると、該当のスナップショットも暗号化される"
+                android:textColor="@color/dark_gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/question_choice2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/question_choice_margin_top"
+                android:text="②暗号化されたEBSに対してスナップショットを取得しても、該当のスナップショットは暗号化されない"
+                android:textColor="@color/dark_gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/question_choice3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/question_choice_margin_top"
+                android:text="③暗号化されたEBSスナップショットを復元したEBSボリュームは暗号化される"
+                android:textColor="@color/dark_gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/question_choice4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/question_choice_margin_top"
+                android:text="④暗号化されたEBSスナップショットを復元したEBSボリュームは暗号化されない"
+                android:textColor="@color/dark_gray"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

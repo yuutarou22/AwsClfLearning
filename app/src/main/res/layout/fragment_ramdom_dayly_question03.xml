@@ -11,16 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:textSize="16sp"
+        android:text="＜解答＞"
         android:textColor="@color/dark_gray"
-        android:text="＜解答＞" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/question_content"
-        android:textSize="13sp"
-        android:text="①と②"
-        android:layout_marginHorizontal="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:text="①と②"
+        android:textColor="@color/dark_gray"
+        android:textSize="13sp" />
 
 </LinearLayout>
