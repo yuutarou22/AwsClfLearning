@@ -6,7 +6,7 @@ AWSのCLF(クラウドプラクティショナー）試験の学習アプリで�
 
 AWS CLF試験を受けようと思う。
 
-どうせ学習するならAWSと連携したアプリを作って、ついでに広告つけて小遣い稼ぎしたい。。。
+どうせ学習するならAWSと連携したアプリを作って、AndroidもAWSも理解を深めようという動機から。
 
 ## S3の導入
 - IAMの追加
@@ -35,6 +35,11 @@ AWS CLF試験を受けようと思う。
 - EpandableListView（折り畳み可能ListView）
   - [実装方法](https://tekulearn.jimdofree.com/%E9%96%8B%E7%99%BA/%E9%A0%85%E7%9B%AE1-10/6-%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E8%A1%A8%E7%A4%BA/)
   - [実装方法２](http://android-note.open-memo.net/sub/list_view__make_expandable_list_view.html)
+- Fuel
+  - [kittinunf/fuel](https://github.com/kittinunf/fuel)
+  - [http通信ライブラリ](https://blog.masterka.net/archives/2275)
+  - [Qiitaの記事](https://qiita.com/naoi/items/8df1409ad48ad8f3c632)
+  - [joinメソッドで処理待ち](https://github.com/kittinunf/fuel/blob/da920c5fc0ed19e8082b09f24002e4abf68f2005/fuel/src/main/kotlin/com/github/kittinunf/fuel/core/requests/CancellableRequest.kt#L34)
 
 ## 参考（UI/UX）
 - [文字や背景にピュアブラックを使ってはいけない理由](https://uxmilk.jp/73614)
