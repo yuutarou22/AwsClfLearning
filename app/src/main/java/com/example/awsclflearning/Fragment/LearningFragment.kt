@@ -20,15 +20,21 @@ import org.json.JSONObject
 
 class LearningFragment : BaseFragment() {
 
-    /** AWS学習コンテンツList **/
+    /** AWS学習コンテンツList（タイトル用） **/
     // 親グループの作成
     val group: MutableList<String> = ArrayList()
     // 子グループの作成
-    val item_group1: MutableList<String> = ArrayList()
-    val item_group2: MutableList<String> = ArrayList()
-    val item_group3: MutableList<String> = ArrayList()
+    val item_title_group1: MutableList<String> = ArrayList()
+    val item_title_group2: MutableList<String> = ArrayList()
+    val item_title_group3: MutableList<String> = ArrayList()
     // 集約List
-    val items: MutableList<List<String>> = ArrayList()
+    val items_title: MutableList<List<String>> = ArrayList()
+
+    /** AWS学習コンテンツList（コンテンツ用） **/
+    val item_content_group1: MutableList<String> = ArrayList()
+    val item_content_group2: MutableList<String> = ArrayList()
+    val item_content_group3: MutableList<String> = ArrayList()
+    val items_contents: MutableList<List<String>> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,12 +46,16 @@ class LearningFragment : BaseFragment() {
         val httpAsync = startLearningContentsJson()
         httpAsync.join()
 
-        items.add(item_group1)
-        items.add(item_group2)
-        items.add(item_group3)
+        items_title.add(item_title_group1)
+        items_title.add(item_title_group2)
+        items_title.add(item_title_group3)
+
+        items_contents.add(item_content_group1)
+        items_contents.add(item_content_group2)
+        items_contents.add(item_content_group3)
 
         // ExpandableListViewの初期化
-        val adapter = context?.let { LearningContentAdapter(it, group, items) }
+        val adapter = context?.let { LearningContentAdapter(it, group, items_title, items_contents) }
         expandable_list_view.setAdapter(adapter)
 
         // 子要素をタップしたときの処理
@@ -53,10 +63,9 @@ class LearningFragment : BaseFragment() {
             val adapter1 = parent.expandableListAdapter as LearningContentAdapter
             val groupName = adapter1.getGroup(groupPosition) as String
             val itemName = adapter1.getChild(groupPosition, childPosition) as String
+            val itemContent = adapter1.getContent(groupPosition, childPosition) as String
 
-            showFragment(LearningDetailContentsFragment())
-
-            Toast.makeText(context, "$groupName : $itemName", Toast.LENGTH_SHORT).show()
+            showFragment(LearningDetailContentsFragment(itemName, itemContent))
             true
         }
     }
@@ -103,13 +112,16 @@ class LearningFragment : BaseFragment() {
                             val jsonObj = learning_contents.getJSONObject(it)
                             when (jsonObj.getInt("id")) {
                                 1 -> {
-                                    item_group1.add(jsonObj.getString("content_name"))
+                                    item_title_group1.add(jsonObj.getString("content_name"))
+                                    item_content_group1.add(jsonObj.getString("content_detail"))
                                 }
                                 2 -> {
-                                    item_group2.add(jsonObj.getString("content_name"))
+                                    item_title_group2.add(jsonObj.getString("content_name"))
+                                    item_content_group2.add(jsonObj.getString("content_detail"))
                                 }
                                 3 -> {
-                                    item_group3.add(jsonObj.getString("content_name"))
+                                    item_title_group3.add(jsonObj.getString("content_name"))
+                                    item_content_group3.add(jsonObj.getString("content_detail"))
                                 }
                                 else -> {
                                     Log.d("LearningFragment", "content id not founded")
@@ -130,9 +142,13 @@ class LearningFragment : BaseFragment() {
 
     private fun clearLearningContentsList() {
         group.clear()
-        item_group1.clear()
-        item_group2.clear()
-        item_group3.clear()
-        items.clear()
+        item_title_group1.clear()
+        item_title_group2.clear()
+        item_title_group3.clear()
+        items_title.clear()
+        item_content_group1.clear()
+        item_content_group2.clear()
+        item_content_group3.clear()
+        items_contents.clear()
     }
 }

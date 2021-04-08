@@ -8,19 +8,27 @@ import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
 import com.example.awsclflearning.R
 
-class LearningContentAdapter(context: Context, _listGroup: List<String>, _listItem: List<List<String>>):
+class LearningContentAdapter(context: Context, _listGroup: List<String>, _listItemTitle: List<List<String>>, _listItemContent: List<List<String>>):
     BaseExpandableListAdapter() {
     /** メンバ変数 **/
     var listGroup: List<String> // 親要素のリスト
-    var listItem: List<List<String>> // 子要素のリスト
+    var listItemTitle: List<List<String>> // 子要素のリスト
+    var listItemContent: List<List<String>>
     var context: Context
+
+    init {
+        this.context = context
+        this.listGroup = _listGroup
+        this.listItemTitle = _listItemTitle
+        this.listItemContent = _listItemContent
+    }
 
     override fun getGroupCount(): Int {
         return listGroup.size
     }
 
     override fun getChildrenCount(groupPosition: Int): Int {
-        return listItem[groupPosition].size
+        return listItemTitle[groupPosition].size
     }
 
     override fun getGroup(groupPosition: Int): Any {
@@ -28,7 +36,7 @@ class LearningContentAdapter(context: Context, _listGroup: List<String>, _listIt
     }
 
     override fun getChild(groupPosition: Int, childPosition: Int): Any {
-        return listItem[groupPosition][childPosition]
+        return listItemTitle[groupPosition][childPosition]
     }
 
     override fun getGroupId(p0: Int): Long {
@@ -62,7 +70,7 @@ class LearningContentAdapter(context: Context, _listGroup: List<String>, _listIt
             convertView = inflater.inflate(R.layout.list_item, parent, false)
         }
         val textView = convertView!!.findViewById<TextView>(R.id.list_item_contents)
-        textView.text = listItem[groupPosition][childPosition]
+        textView.text = listItemTitle[groupPosition][childPosition]
         return convertView
     }
 
@@ -70,9 +78,7 @@ class LearningContentAdapter(context: Context, _listGroup: List<String>, _listIt
         return true
     }
 
-    init {
-        this.context = context
-        this.listGroup = _listGroup
-        this.listItem = _listItem
+    fun getContent(groupPosition: Int, childPosition: Int): Any {
+        return listItemContent[groupPosition][childPosition]
     }
 }
