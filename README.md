@@ -40,6 +40,8 @@ AWS CLF試験を受けようと思う。
   - [http通信ライブラリ](https://blog.masterka.net/archives/2275)
   - [Qiitaの記事](https://qiita.com/naoi/items/8df1409ad48ad8f3c632)
   - [joinメソッドで処理待ち](https://github.com/kittinunf/fuel/blob/da920c5fc0ed19e8082b09f24002e4abf68f2005/fuel/src/main/kotlin/com/github/kittinunf/fuel/core/requests/CancellableRequest.kt#L34)
+- WebViewでlinkタップ時にブラウザに飛ばないようにする
+  - [shouldOverrideUrlLoading](https://asahima.hatenablog.jp/entry/2017/01/08/000000)
 
 ## 参考（UI/UX）
 - [文字や背景にピュアブラックを使ってはいけない理由](https://uxmilk.jp/73614)
