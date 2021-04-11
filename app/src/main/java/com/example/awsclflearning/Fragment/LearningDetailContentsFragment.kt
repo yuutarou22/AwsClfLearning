@@ -7,10 +7,16 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebResourceRequest
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import com.example.awsclflearning.R
+import kotlinx.android.synthetic.main.fragment_learning_detail_contents.*
 
-class LearningDetailContentsFragment : BaseFragment() {
+class LearningDetailContentsFragment(_learningTitle: String, _learningContent: String) : BaseFragment() {
 
+    val learningTitle = _learningTitle
+    val learningContent = _learningContent
     var isFavorite: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +29,27 @@ class LearningDetailContentsFragment : BaseFragment() {
     ): View? {
         setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_learning_detail_contents, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if (learningContent.contains("https://")) {
+            learning_scroll_view.visibility = View.GONE
+            webview.loadUrl(learningContent)
+            webview.setWebViewClient(object: WebViewClient() {
+                override fun shouldOverrideUrlLoading(
+                    view: WebView?,
+                    request: WebResourceRequest?
+                ): Boolean {
+                    return false
+                }
+            })
+        } else {
+            webview.visibility = View.GONE
+            learning_title.text = learningTitle
+            learning_content.text = learningContent
+        }
     }
 
     /** ToolBarのオプション項目をセット **/
