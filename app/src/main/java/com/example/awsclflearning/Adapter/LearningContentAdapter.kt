@@ -67,7 +67,7 @@ class LearningContentAdapter(context: Context, _listGroup: List<String>, _listIt
         var convertView = convertView
         if(convertView == null) {
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convertView = inflater.inflate(R.layout.list_item, parent, false)
+            convertView = inflater.inflate(R.layout.list_item_learning, parent, false)
         }
         val textView = convertView!!.findViewById<TextView>(R.id.list_item_contents)
         textView.text = listItemTitle[groupPosition][childPosition]
