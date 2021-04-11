@@ -42,6 +42,8 @@ AWS CLF試験を受けようと思う。
   - [joinメソッドで処理待ち](https://github.com/kittinunf/fuel/blob/da920c5fc0ed19e8082b09f24002e4abf68f2005/fuel/src/main/kotlin/com/github/kittinunf/fuel/core/requests/CancellableRequest.kt#L34)
 - WebViewでlinkタップ時にブラウザに飛ばないようにする
   - [shouldOverrideUrlLoading](https://asahima.hatenablog.jp/entry/2017/01/08/000000)
+- ListView
+  - [設定画面ではBaseAdapterを使った](https://qiita.com/Tsumugi/items/47f31bb7351979a45653)
 
 ## 参考（UI/UX）
 - [文字や背景にピュアブラックを使ってはいけない理由](https://uxmilk.jp/73614)
