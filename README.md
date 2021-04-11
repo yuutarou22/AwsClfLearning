@@ -44,6 +44,10 @@ AWS CLF試験を受けようと思う。
   - [shouldOverrideUrlLoading](https://asahima.hatenablog.jp/entry/2017/01/08/000000)
 - ListView
   - [設定画面ではBaseAdapterを使った](https://qiita.com/Tsumugi/items/47f31bb7351979a45653)
+  - [onItemClickListenerを実装しているのに反応しない場合](https://blog.goo.ne.jp/shunsuke222/e/4eff69bb74ea9db47f644ff37aef88c7)
+    - SwitchWidgetがタッチイベントを先に検知しているみたい。そのせいでListの要素のタッチイベントが走らないようになっていた。
+    - Switchの「focusableInTouchMode」と「focusable」をFalseに設定して対応
+    - [上位LayoutのdescendantFocusabilityをblocksDescendantsにするとかもある](https://teratail.com/questions/37876)
 
 ## 参考（UI/UX）
 - [文字や背景にピュアブラックを使ってはいけない理由](https://uxmilk.jp/73614)
