@@ -5,10 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Toast
 import com.example.awsclflearning.R
+import com.example.awsclflearning.Util.SharedPreferencesEditor
 import kotlinx.android.synthetic.main.list_item_settings.view.*
 
 class SettingContentAdapter(val _context: Context?, val _inflater: LayoutInflater, val _list:List<String>): BaseAdapter() {
+
+    var sp = SharedPreferencesEditor(_context!!, "Settings")
 
     override fun getCount(): Int {
         return _list.size
@@ -26,6 +30,27 @@ class SettingContentAdapter(val _context: Context?, val _inflater: LayoutInflate
         var convertedView = _convertView
         convertedView = _inflater.inflate(R.layout.list_item_settings, parent, false)
         convertedView.setting_title.text = _list.get(position)
+        if (position==0) {
+            convertedView.setting_switch.visibility = View.VISIBLE
+            convertedView.setting_switch.isChecked = sp.getDarkMode()
+            setupDarkModeSwitch(convertedView)
+        }
         return convertedView
+    }
+
+    fun setupDarkModeSwitch(convertedView: View) {
+        convertedView.setting_switch.setOnCheckedChangeListener { compoundButton, isChecked ->
+            if (isChecked) {
+                Toast.makeText(this._context, "ダークモードを ONにしました", Toast.LENGTH_SHORT).show()
+                sp.setDarkMode(isChecked)
+                _context?.setTheme(R.style.MainTheme_Dark)
+                convertedView.invalidate()
+            } else {
+                Toast.makeText(this._context, "ダークモードを OFFにしました", Toast.LENGTH_SHORT).show()
+                sp.setDarkMode(isChecked)
+                _context?.setTheme(R.style.MainTheme_Default)
+                convertedView.invalidate()
+            }
+        }
     }
 }
