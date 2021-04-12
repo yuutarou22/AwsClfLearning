@@ -52,7 +52,7 @@ class SettingsFragment : BaseFragment(), OnItemClickListener {
     }
 
     fun setupListView() {
-        val settingContentsList = listOf<String>("フォントサイズ", "ダークモード", "プライバシーポリシー ", "アプリバージョン", "ライセンス", "友だちにススめる")
+        val settingContentsList = listOf<String>("ダークモード", "フォントサイズ", "プライバシーポリシー", "アプリバージョン", "ライセンス", "友だちにススめる")
         var settingAdapter = SettingContentAdapter(context, context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater, settingContentsList)
         settings_list_view.adapter = settingAdapter
         settings_list_view.onItemClickListener = this
