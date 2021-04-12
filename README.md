@@ -59,3 +59,4 @@ AWS CLF試験を受けようと思う。
     - 独自テーマを作成->styles.xml
     - 色を定義->colors.xml
   - [ダークモードの色について](https://qiita.com/keidroid/items/920e655fa6823b533ba1)
+  - [Themeについて](https://konifar.hatenablog.com/entry/2019/02/11/122825)
