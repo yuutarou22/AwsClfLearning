@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="＜解答＞"
-        android:textColor="@color/dark_gray"
+        android:textColor="?attr/customTextColor"
         android:textSize="16sp" />
 
     <TextView
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:text="①と②"
-        android:textColor="@color/dark_gray"
+        android:textColor="?attr/customTextColor"
         android:textSize="13sp" />
 
 </LinearLayout>

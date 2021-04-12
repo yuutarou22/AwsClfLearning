@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="＜選択肢＞"
-        android:textColor="@color/dark_gray"
+        android:textColor="?attr/customTextColor"
         android:textSize="16sp" />
 
     <ScrollView
@@ -32,7 +32,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="@dimen/question_choice_margin_top"
                 android:text="①暗号化されたEBSに対してスナップショットを取得すると、該当のスナップショットも暗号化される"
-                android:textColor="@color/dark_gray"
+                android:textColor="?attr/customTextColor"
                 android:textSize="13sp" />
 
             <TextView
@@ -42,7 +42,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="@dimen/question_choice_margin_top"
                 android:text="②暗号化されたEBSに対してスナップショットを取得しても、該当のスナップショットは暗号化されない"
-                android:textColor="@color/dark_gray"
+                android:textColor="?attr/customTextColor"
                 android:textSize="13sp" />
 
             <TextView
@@ -52,7 +52,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="@dimen/question_choice_margin_top"
                 android:text="③暗号化されたEBSスナップショットを復元したEBSボリュームは暗号化される"
-                android:textColor="@color/dark_gray"
+                android:textColor="?attr/customTextColor"
                 android:textSize="13sp" />
 
             <TextView
@@ -62,7 +62,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="@dimen/question_choice_margin_top"
                 android:text="④暗号化されたEBSスナップショットを復元したEBSボリュームは暗号化されない"
-                android:textColor="@color/dark_gray"
+                android:textColor="?attr/customTextColor"
                 android:textSize="13sp" />
 
         </LinearLayout>

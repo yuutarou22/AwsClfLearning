@@ -12,7 +12,7 @@
         android:paddingStart="25dp"
         android:paddingEnd="7dp"
         android:text="設定名"
-        android:textColor="@color/dark_gray"
+        android:textColor="?attr/customTextColor"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/setting_switch"

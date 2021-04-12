@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:translationZ="8dp"
+    app:cardBackgroundColor="?attr/customButtonBackgroundColor"
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="AWS学習"
+                android:textColor="?attr/customTextColor"
                 android:textSize="20sp" />
 
         </LinearLayout>

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="＜問題＞"
-        android:textColor="@color/dark_gray"
+        android:textColor="?attr/customTextColor"
         android:textSize="16sp" />
 
     <ScrollView
@@ -25,9 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
+            android:textColor="?attr/customTextColor"
             android:text="EC2にEBSをアタッチして、アプリケーションで作成したファイルをEBSに格納している。EBSの暗号化について正しいものを2つ選べ。\n\naaaaaaaaaaaaaaaaaa\nfdsfdafdafdsaf\nfdsfdsfsafdasfdasf\nああああああああああ\n
 あああああああ\nあああfdsああファｓｆ\n亜fd亜fさfさfさｆ"
-            android:textColor="@color/dark_gray"
             android:textSize="13sp" />
     </ScrollView>
 </LinearLayout>
