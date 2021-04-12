@@ -50,8 +50,8 @@ AWS CLF試験を受けようと思う。
     - [上位LayoutのdescendantFocusabilityをblocksDescendantsにするとかもある](https://teratail.com/questions/37876)
 
 ## 参考（UI/UX）
-- [文字や背景にピュアブラックを使ってはいけない理由](https://uxmilk.jp/73614)
-  - 黒のカラーコードに#000000を使うのはイケてないっていうお話
+- 文字や背景にピュアブラックを使ってはいけない理由
+  - [黒のカラーコードに#000000を使うのはイケてないっていうお話](https://uxmilk.jp/73614)
 - ダークモード対応
   - [独自のThemeを作成する方法](https://qiita.com/s17er/items/04a080181c860ea84694)
     - 独自属性（アトリビュート）を作成->attrs.xml
