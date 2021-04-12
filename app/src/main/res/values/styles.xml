@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
+
+    <style name="MainTheme.Default" parent="MainTheme">
+        <item name="toolbarColor">@color/main_color</item>
+        <item name="colorControlNormal">@color/dark_gray</item>
+        <item name="customTextColor">@color/dark_gray</item>
+        <item name="customButtonBackgroundColor">@color/white</item>
+        <item name="fragmentBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="MainTheme.Dark" parent="MainTheme">
+        <item name="toolbarColor">@color/main_color_dark</item>
+        <item name="colorControlNormal">@color/gray_white</item>
+        <item name="customTextColor">@color/gray_white</item>
+        <item name="customButtonBackgroundColor">@color/dark_gray</item>
+        <item name="fragmentBackgroundColor">@color/background_fragment_dark_gray</item>
+    </style>
+</resources>

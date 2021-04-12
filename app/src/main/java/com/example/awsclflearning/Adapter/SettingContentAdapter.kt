@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.Toast
 import com.example.awsclflearning.R
 import kotlinx.android.synthetic.main.list_item_settings.view.*
 
@@ -26,6 +27,16 @@ class SettingContentAdapter(val _context: Context?, val _inflater: LayoutInflate
         var convertedView = _convertView
         convertedView = _inflater.inflate(R.layout.list_item_settings, parent, false)
         convertedView.setting_title.text = _list.get(position)
+        if (position==0) {
+            convertedView.setting_switch.visibility = View.VISIBLE
+            convertedView.setting_switch.setOnCheckedChangeListener { compoundButton, isChecked ->
+                if (isChecked) {
+                    Toast.makeText(this._context, "onCheckedChanged true", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this._context, "onCheckedChanged false", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
         return convertedView
     }
 }

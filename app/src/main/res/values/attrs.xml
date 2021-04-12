@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MainTheme">
+        <attr name="toolbarColor" format="color"/>
+        <attr name="customTextColor" format="color"/>
+        <attr name="customButtonBackgroundColor" format="color"/>
+        <attr name="fragmentBackgroundColor" format="color"/>
+    </declare-styleable>
+</resources>
