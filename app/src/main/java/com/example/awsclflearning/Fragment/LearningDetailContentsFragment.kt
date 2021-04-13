@@ -1,5 +1,6 @@
 package com.example.awsclflearning.Fragment
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -43,6 +44,15 @@ class LearningDetailContentsFragment(_learningTitle: String, _learningContent: S
                     request: WebResourceRequest?
                 ): Boolean {
                     return false
+                }
+
+                override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+                    super.onPageStarted(view, url, favicon)
+                    loading_progress_bar.visibility = View.VISIBLE
+                }
+                override fun onPageFinished(view: WebView?, url: String?) {
+                    super.onPageFinished(view, url)
+                    loading_progress_bar.visibility = View.GONE
                 }
             })
         } else {
