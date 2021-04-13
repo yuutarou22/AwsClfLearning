@@ -48,6 +48,11 @@ AWS CLF試験を受けようと思う。
     - SwitchWidgetがタッチイベントを先に検知しているみたい。そのせいでListの要素のタッチイベントが走らないようになっていた。
     - Switchの「focusableInTouchMode」と「focusable」をFalseに設定して対応
     - [上位LayoutのdescendantFocusabilityをblocksDescendantsにするとかもある](https://teratail.com/questions/37876)
+- SharedPreferences
+  - [使い方](https://akira-watson.com/android/kotlin/sharedpreferences-datastorage.html)
+  - [SharedPreferencesの管理方法](https://qiita.com/ryo_mm2d/items/b90dbbd726183c20c14c)
+- シェア機能の実装
+  - [IntentのcreateChooserっての使う](https://lineocean.com/2017/04/20/138/)
 
 ## 参考（UI/UX）
 - 文字や背景にピュアブラックを使ってはいけない理由
