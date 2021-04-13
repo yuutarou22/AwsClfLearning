@@ -5,4 +5,9 @@
     <string name="title_fragment_learning">AWS学習</string>
     <string name="title_fragment_settings">設定</string>
     <string name="ramdom_daily_question_title">今日の1問1答</string>
+
+    <!-- 設定画面 -->
+    <string name="settings_font_size_big">大</string>
+    <string name="settings_font_size_mid">中</string>
+    <string name="settings_font_size_small">小</string>
 </resources>
