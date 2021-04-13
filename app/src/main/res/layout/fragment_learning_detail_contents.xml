@@ -51,4 +51,13 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="15dp" />
 
+    <ProgressBar
+        android:id="@+id/loading_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/main_color"
+        android:indeterminateTintMode="src_in"
+        android:visibility="gone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
