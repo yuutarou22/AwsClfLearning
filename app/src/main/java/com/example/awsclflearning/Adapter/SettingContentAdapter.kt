@@ -30,10 +30,14 @@ class SettingContentAdapter(val _context: Context?, val _inflater: LayoutInflate
         var convertedView = _convertView
         convertedView = _inflater.inflate(R.layout.list_item_settings, parent, false)
         convertedView.setting_title.text = _list.get(position)
-        if (position==0) {
+        if (position == 0) {
             convertedView.setting_switch.visibility = View.VISIBLE
             convertedView.setting_switch.isChecked = sp.getDarkMode()
             setupDarkModeSwitch(convertedView)
+        }
+        if (position == 3) {
+            convertedView.setting_app_version.visibility = View.VISIBLE
+            convertedView.setting_app_version.text = _context?.packageManager?.getPackageInfo(_context?.packageName, 0)?.versionName
         }
         return convertedView
     }
@@ -44,12 +48,10 @@ class SettingContentAdapter(val _context: Context?, val _inflater: LayoutInflate
                 Toast.makeText(this._context, "ダークモードを ONにしました", Toast.LENGTH_SHORT).show()
                 sp.setDarkMode(isChecked)
                 _context?.setTheme(R.style.MainTheme_Dark)
-                convertedView.invalidate()
             } else {
                 Toast.makeText(this._context, "ダークモードを OFFにしました", Toast.LENGTH_SHORT).show()
                 sp.setDarkMode(isChecked)
                 _context?.setTheme(R.style.MainTheme_Default)
-                convertedView.invalidate()
             }
         }
     }
