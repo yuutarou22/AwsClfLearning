@@ -73,3 +73,7 @@ AWS CLF試験を受けようと思う。
     - 色を定義->colors.xml
   - [ダークモードの色について](https://qiita.com/keidroid/items/920e655fa6823b533ba1)
   - [Themeについて](https://konifar.hatenablog.com/entry/2019/02/11/122825)
+
+## 参考（問題）
+- [【公式】AWSクラウドプラクティショナーの基礎知識](https://aws.amazon.com/jp/training/course-descriptions/cloud-practitioner-essentials/)
+- [問題集](https://www.amazon.co.jp/dp/4797397403/ref=cm_sw_em_r_mt_dp_U_NGakEb305PQ0C)
