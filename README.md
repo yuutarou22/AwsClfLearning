@@ -53,6 +53,14 @@ AWS CLF試験を受けようと思う。
   - [SharedPreferencesの管理方法](https://qiita.com/ryo_mm2d/items/b90dbbd726183c20c14c)
 - シェア機能の実装
   - [IntentのcreateChooserっての使う](https://lineocean.com/2017/04/20/138/)
+- 非同期処理について
+  - [API30からAsyncTaskは非推奨となった](https://developer.android.com/reference/android/os/AsyncTask)
+    - https://tips.priart.net/52/
+  - [非同期処理の8つの方法](https://banbara-studio.hatenablog.com/entry/2018/06/07/141305)
+  - [AsyncTask基本の基](https://qiita.com/sasaki_shunsuke/items/19967025e4cde8be3da7)
+- Coroutineについて
+  - [Coroutine概観](https://qiita.com/kawmra/items/ee4acb7db61f70dec9a8)
+  - [逆引きCoroutine](https://qiita.com/kumamotone/items/8972dc5732a48c90f0dd)
 
 ## 参考（UI/UX）
 - 文字や背景にピュアブラックを使ってはいけない理由
