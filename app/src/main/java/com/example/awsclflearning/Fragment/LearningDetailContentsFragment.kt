@@ -1,6 +1,7 @@
 package com.example.awsclflearning.Fragment
 
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
@@ -12,12 +13,19 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.example.awsclflearning.R
+import com.github.kittinunf.result.Result.Success
+import com.github.kittinunf.fuel.httpGet
 import kotlinx.android.synthetic.main.fragment_learning_detail_contents.*
 
-class LearningDetailContentsFragment(_learningTitle: String, _learningContent: String) : BaseFragment() {
+class LearningDetailContentsFragment(
+    _learningTitle: String,
+    _learningContent: String,
+    _learningContentImageUrl: String
+) : BaseFragment() {
 
     val learningTitle = _learningTitle
     val learningContent = _learningContent
+    val learningContentImageUrl = _learningContentImageUrl
     var isFavorite: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,6 +67,8 @@ class LearningDetailContentsFragment(_learningTitle: String, _learningContent: S
             webview.visibility = View.GONE
             learning_title.text = learningTitle
             learning_content.text = learningContent
+
+            setupLearningContentImage()
         }
     }
 
@@ -82,5 +92,17 @@ class LearningDetailContentsFragment(_learningTitle: String, _learningContent: S
         else -> {
             super.onOptionsItemSelected(item)
         }
+    }
+
+    fun setupLearningContentImage() {
+        val async = learningContentImageUrl.httpGet().response { request, response, result ->
+            when (result) {
+                is Success -> {
+                    val bitmap = BitmapFactory.decodeStream(response.body().toStream())
+                    learning_content_img.setImageBitmap(bitmap)
+                }
+            }
+        }
+        async.join()
     }
 }
