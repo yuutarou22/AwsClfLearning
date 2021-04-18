@@ -15,6 +15,7 @@ import android.webkit.WebViewClient
 import com.example.awsclflearning.R
 import com.github.kittinunf.result.Result.Success
 import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.result.Result.Failure
 import kotlinx.android.synthetic.main.fragment_learning_detail_contents.*
 
 class LearningDetailContentsFragment(
@@ -95,11 +96,22 @@ class LearningDetailContentsFragment(
     }
 
     fun setupLearningContentImage() {
+
+        // UrlがNullか空文字の場合はNoImage
+        if (learningContentImageUrl.isNullOrEmpty()) {
+            learning_content_img.setImageResource(R.drawable.no_img)
+            return
+        }
+
         val async = learningContentImageUrl.httpGet().response { request, response, result ->
             when (result) {
                 is Success -> {
                     val bitmap = BitmapFactory.decodeStream(response.body().toStream())
                     learning_content_img.setImageBitmap(bitmap)
+                }
+                is Failure -> {
+                    // Urlが不正で画像取得できない場合はNoImage
+                    learning_content_img.setImageResource(R.drawable.no_img)
                 }
             }
         }
