@@ -8,12 +8,18 @@ import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
 import com.example.awsclflearning.R
 
-class LearningContentAdapter(context: Context, _listGroup: List<String>, _listItemTitle: List<List<String>>, _listItemContent: List<List<String>>):
+class LearningContentAdapter(context: Context,
+                             _listGroup: List<String>,
+                             _listItemTitle: List<List<String>>,
+                             _listItemContent: List<List<String>>,
+                             _listItemContentImageUrl: List<List<String>>):
+
     BaseExpandableListAdapter() {
     /** メンバ変数 **/
     var listGroup: List<String> // 親要素のリスト
     var listItemTitle: List<List<String>> // 子要素のリスト
     var listItemContent: List<List<String>>
+    var listItemContentImageUrl: List<List<String>>
     var context: Context
 
     init {
@@ -21,6 +27,7 @@ class LearningContentAdapter(context: Context, _listGroup: List<String>, _listIt
         this.listGroup = _listGroup
         this.listItemTitle = _listItemTitle
         this.listItemContent = _listItemContent
+        this.listItemContentImageUrl = _listItemContentImageUrl
     }
 
     override fun getGroupCount(): Int {
@@ -80,5 +87,9 @@ class LearningContentAdapter(context: Context, _listGroup: List<String>, _listIt
 
     fun getContent(groupPosition: Int, childPosition: Int): Any {
         return listItemContent[groupPosition][childPosition]
+    }
+
+    fun getContentImageUrl(groupPosition: Int, childPosition: Int): Any {
+        return listItemContentImageUrl[groupPosition][childPosition]
     }
 }

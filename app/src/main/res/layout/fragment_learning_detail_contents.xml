@@ -33,10 +33,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/learning_content_img"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
             <TextView
                 android:id="@+id/learning_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="content"
                 android:textColor="?attr/customTextColor"
                 android:textSize="12sp"
