@@ -20,9 +20,6 @@ import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.list_item_settings.*
 
 class SettingsFragment : BaseFragment(), OnItemClickListener {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -56,7 +53,7 @@ class SettingsFragment : BaseFragment(), OnItemClickListener {
     }
 
     fun setupListView() {
-        val settingContentsList = listOf<String>("ダークモード", "フォントサイズ", "プライバシーポリシー", "アプリバージョン", "ライセンス", "友だちにススめる", "レビューを書く")
+        val settingContentsList = createSettingsContentList()
         var settingAdapter = SettingContentAdapter(context, context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater, settingContentsList)
         settings_list_view.adapter = settingAdapter
         settings_list_view.onItemClickListener = this
@@ -69,12 +66,12 @@ class SettingsFragment : BaseFragment(), OnItemClickListener {
             0 -> {
                 var sp = SharedPreferencesEditor(context!!, "Settings")
                 if (setting_switch.isChecked) {
-                    Toast.makeText(context, "ダークモードを OFFにしました", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.settings_dark_mode_off), Toast.LENGTH_SHORT).show()
                     setting_switch.isChecked = false
                     sp.setDarkMode(false)
                     context!!.setTheme(R.style.MainTheme_Default)
                 } else {
-                    Toast.makeText(context, "ダークモードを ONにしました", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, getString(R.string.settings_dark_mode_on), Toast.LENGTH_SHORT).show()
                     setting_switch.isChecked = true
                     sp.setDarkMode(true)
                     context!!.setTheme(R.style.MainTheme_Dark)
@@ -107,5 +104,16 @@ class SettingsFragment : BaseFragment(), OnItemClickListener {
         intent.setType("text/plain")
         intent.putExtra(Intent.EXTRA_TEXT, "共有テストテストテスト https://jp.techcrunch.com/2021/04/13/2021-04-12-twitter-to-set-up-its-first-african-presence-in-ghana/")
         startActivity(Intent.createChooser(intent, "共有方法を選んでください。"))
+    }
+
+    fun createSettingsContentList(): List<String> {
+        return listOf<String>(
+            getString(R.string.settings_content_dark_mode),
+            getString(R.string.settings_content_font_size),
+            getString(R.string.settings_content_privacy_policy),
+            getString(R.string.settings_content_app_ver),
+            getString(R.string.settings_content_license),
+            getString(R.string.settings_content_recommend),
+            getString(R.string.settings_content_review))
     }
 }

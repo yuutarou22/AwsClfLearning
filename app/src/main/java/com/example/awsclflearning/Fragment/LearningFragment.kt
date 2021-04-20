@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.example.awsclflearning.Adapter.LearningContentAdapter
 import com.example.awsclflearning.R
 import com.github.kittinunf.fuel.core.requests.CancellableRequest

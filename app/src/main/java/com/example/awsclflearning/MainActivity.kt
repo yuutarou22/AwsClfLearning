@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
     fun showTopFragment() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-//        fragmentTransaction.addToBackStack(null)
         fragmentTransaction.replace(R.id.main_contents, TopFragment())
         fragmentTransaction.commit()
     }

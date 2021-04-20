@@ -7,6 +7,17 @@
     <string name="ramdom_daily_question_title">今日の1問1答</string>
 
     <!-- 設定画面 -->
+    <string name="settings_content_dark_mode">ダークモード</string>
+    <string name="settings_content_font_size">フォントサイズ</string>
+    <string name="settings_content_privacy_policy">プライバシーポリシー</string>
+    <string name="settings_content_app_ver">アプリバージョン</string>
+    <string name="settings_content_license">ライセンス</string>
+    <string name="settings_content_recommend">友だちにススめる</string>
+    <string name="settings_content_review">レビューを書く</string>
+
+    <string name="settings_dark_mode_off">ダークモードをOFFにしました</string>
+    <string name="settings_dark_mode_on">ダークモードをONにしました</string>
+
     <string name="settings_font_size_big">大</string>
     <string name="settings_font_size_mid">中</string>
     <string name="settings_font_size_small">小</string>
