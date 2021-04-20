@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AwsClfLearning</string>
+    <string name="app_name">Aws Clf Learning</string>
     <string name="title_fragment_top">トップ</string>
     <string name="title_fragment_practice">練習問題</string>
     <string name="title_fragment_learning">AWS学習</string>
