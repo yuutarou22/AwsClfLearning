@@ -2,8 +2,6 @@ package com.example.awsclflearning.Fragment
 
 import android.app.AlertDialog
 import android.app.Dialog
-import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.DialogFragment
@@ -14,11 +12,11 @@ class SettingsDialogFragment(val _message: String, val _array: Int, val _tag: St
         return activity.let {
             val builder = AlertDialog.Builder(context)
             builder.setTitle(_message)
-                .setItems(_array, DialogInterface.OnClickListener{ dialog, which ->
-                    if (_tag.equals("Font")) {
+                .setItems(_array) { _, which ->
+                    if (_tag == "Font") {
                         setFontSize(which)
                     }
-                })
+                }
             builder.create()
         }
     }
