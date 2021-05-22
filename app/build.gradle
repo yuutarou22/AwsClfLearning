@@ -15,6 +15,19 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        flavorDimensions "environment"
+        productFlavors {
+            develop {
+                flavorDimensions "environment"
+                manifestPlaceholders = [appName:"@string/app_name"]
+                applicationIdSuffix ".develop"
+            }
+            product {
+                flavorDimensions "environment"
+                manifestPlaceholders = [appName:"@string/app_name"]
+            }
+        }
     }
 
     buildTypes {
