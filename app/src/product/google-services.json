@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "734993631595",
+    "project_id": "awsclflearning-product",
+    "storage_bucket": "awsclflearning-product.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:734993631595:android:7de063b062189a1b69642e",
+        "android_client_info": {
+          "package_name": "com.yutaroM.awsclflearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "734993631595-hf7ke7ksdkt0f627q42etetv8dctpnh5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOMifWujTPG8vHzwnARGnUQHY-GlkWieg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "734993631595-hf7ke7ksdkt0f627q42etetv8dctpnh5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
