@@ -15,11 +15,13 @@ import com.example.awsclflearning.DepthPageTransformer
 import com.example.awsclflearning.Fragment.RamdomDaylyQuestionFragments.RamdomDaylyQuestionFragment01
 import com.example.awsclflearning.Fragment.RamdomDaylyQuestionFragments.RamdomDaylyQuestionFragment02
 import com.example.awsclflearning.Fragment.RamdomDaylyQuestionFragments.RamdomDaylyQuestionFragment03
+import com.example.awsclflearning.Model.QuestionModel
 import com.example.awsclflearning.R
 import com.example.awsclflearning.Util.FirebaseAnalyticsUtil.Companion.recordScreenView
+import com.example.awsclflearning.Util.FirestoreUtil
 import kotlinx.android.synthetic.main.fragment_top.*
 
-class TopFragment : BaseFragment(), OnClickListener {
+class TopFragment : BaseFragment(), OnClickListener, FirestoreUtil.DailyQuestionListener {
 
     private lateinit var mPager: ViewPager
 
@@ -57,13 +59,11 @@ class TopFragment : BaseFragment(), OnClickListener {
         super.onActivityCreated(savedInstanceState)
         activity?.title = getString(R.string.title_fragment_top)
 
-        val fragmentList = createFragmentList()
-        mPager = random_daily_question_pager
-        val pagerAdapter = childFragmentManager?.let { RamdomDaylyQuestionAdapter(it, fragmentList) }
-        mPager.setPageTransformer(true, DepthPageTransformer())
-        mPager.adapter = pagerAdapter
+        val firestoreUtil = FirestoreUtil()
+        firestoreUtil.setDaylyQuestionListener(this)
+        firestoreUtil.getDailyQuestion()
 
-        setupIndicator()
+        // 後続処理は、onSuccessにて実行
     }
 
     fun setupIndicator() {
@@ -98,11 +98,21 @@ class TopFragment : BaseFragment(), OnClickListener {
         }
     }
 
-    private fun createFragmentList(): ArrayList<Fragment> {
+    override fun onSuccess(data: QuestionModel) {
+        val fragmentList = createFragmentList(data)
+        mPager = random_daily_question_pager
+        val pagerAdapter = childFragmentManager?.let { RamdomDaylyQuestionAdapter(it, fragmentList) }
+        mPager.setPageTransformer(true, DepthPageTransformer())
+        mPager.adapter = pagerAdapter
+
+        setupIndicator()
+    }
+
+    private fun createFragmentList(data: QuestionModel): ArrayList<Fragment> {
         return arrayListOf<Fragment>(
-            RamdomDaylyQuestionFragment01(),
-            RamdomDaylyQuestionFragment02(),
-            RamdomDaylyQuestionFragment03()
+            RamdomDaylyQuestionFragment01(data.contents),
+            RamdomDaylyQuestionFragment02(data.answers),
+            RamdomDaylyQuestionFragment03(data.answers)
         )
     }
 }
