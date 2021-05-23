@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.awsclflearning.Adapter.LearningContentAdapter
 import com.example.awsclflearning.R
+import com.example.awsclflearning.Util.FirebaseAnalyticsUtil.Companion.recordScreenView
 import com.github.kittinunf.fuel.core.requests.CancellableRequest
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result.Failure
@@ -43,6 +44,7 @@ class LearningFragment : BaseFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        recordScreenView(getString(R.string.firebase_screen_name_aws_learning))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

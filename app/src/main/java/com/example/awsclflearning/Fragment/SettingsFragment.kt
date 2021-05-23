@@ -15,6 +15,7 @@ import android.widget.AdapterView.OnItemClickListener
 import android.widget.Toast
 import com.example.awsclflearning.Adapter.SettingContentAdapter
 import com.example.awsclflearning.R
+import com.example.awsclflearning.Util.FirebaseAnalyticsUtil.Companion.recordScreenView
 import com.example.awsclflearning.Util.SharedPreferencesEditor
 import kotlinx.android.synthetic.main.fragment_settings.*
 import kotlinx.android.synthetic.main.list_item_settings.*
@@ -30,6 +31,7 @@ class SettingsFragment : BaseFragment(), OnItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        recordScreenView(getString(R.string.firebase_screen_name_settings))
         setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.awsclflearning.R
+import com.example.awsclflearning.Util.FirebaseAnalyticsUtil
 
 class PracticeFragment : Fragment() {
 
@@ -30,6 +31,7 @@ class PracticeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        FirebaseAnalyticsUtil.recordScreenView(getString(R.string.firebase_screen_name_practice))
         return inflater.inflate(R.layout.fragment_practice, container, false)
     }
 

@@ -16,6 +16,7 @@ import com.example.awsclflearning.Fragment.RamdomDaylyQuestionFragments.RamdomDa
 import com.example.awsclflearning.Fragment.RamdomDaylyQuestionFragments.RamdomDaylyQuestionFragment02
 import com.example.awsclflearning.Fragment.RamdomDaylyQuestionFragments.RamdomDaylyQuestionFragment03
 import com.example.awsclflearning.R
+import com.example.awsclflearning.Util.FirebaseAnalyticsUtil.Companion.recordScreenView
 import kotlinx.android.synthetic.main.fragment_top.*
 
 class TopFragment : BaseFragment(), OnClickListener {
@@ -24,6 +25,7 @@ class TopFragment : BaseFragment(), OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        recordScreenView(getString(R.string.firebase_screen_name_top))
     }
 
     override fun onCreateView(

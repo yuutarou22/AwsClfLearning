@@ -21,4 +21,11 @@
     <string name="settings_font_size_big">大</string>
     <string name="settings_font_size_mid">中</string>
     <string name="settings_font_size_small">小</string>
+
+    <!-- FirebaseAnalytics用 -->
+    <string name="firebase_screen_name_top">トップ</string>
+    <string name="firebase_screen_name_practice">練習問題</string>
+    <string name="firebase_screen_name_aws_learning">AWS学習</string>
+    <string name="firebase_screen_name_aws_learning_detail">AWS学習 詳細</string>
+    <string name="firebase_screen_name_settings">設定</string>
 </resources>

@@ -13,6 +13,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.example.awsclflearning.R
+import com.example.awsclflearning.Util.FirebaseAnalyticsUtil
 import com.github.kittinunf.result.Result.Success
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result.Failure
@@ -33,6 +34,7 @@ class LearningDetailContentsFragment(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        FirebaseAnalyticsUtil.recordScreenView(getString(R.string.firebase_screen_name_aws_learning_detail))
         setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_learning_detail_contents, container, false)
     }
