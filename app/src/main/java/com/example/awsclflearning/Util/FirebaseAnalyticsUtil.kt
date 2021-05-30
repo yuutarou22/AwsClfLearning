@@ -9,10 +9,10 @@ class FirebaseAnalyticsUtil {
 
     companion object {
 
-        private val firebaseANalytics: FirebaseAnalytics = Firebase.analytics
+        private val firebaseAnalytics: FirebaseAnalytics = Firebase.analytics
 
         fun recordScreenView(screenName: String) {
-            firebaseANalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+            firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
                 param(FirebaseAnalytics.Param.SCREEN_NAME, screenName)
             }
         }
